@@ -9,7 +9,7 @@
 - You will find the id number next to mouse name (e.g. Finalmouse Starlight ... id=9)  
 ![image](https://user-images.githubusercontent.com/108423881/218272916-08bff256-bafb-4b68-aac0-b90dbe394bc9.png)  
 
-- If you don't see your mouse (i.e. wayland recievers) try booting your linux into XORG (e.g.https://itsfoss.com/switch-xorg-wayland/), this would likely also fix some mouse stutter issues as it did for me  
+- If you don't see your mouse (i.e. wayland recievers) try booting your linux into XORG (e.g. https://itsfoss.com/switch-xorg-wayland/), this would likely also fix some mouse stutter issues as it did for me  
 
 ### Edit your config
 
