@@ -5,6 +5,10 @@
 - Only tested in Linux Minecraft so far...
   - Getting problems like this https://www.reddit.com/r/linux_gaming/comments/3nxnzg/mouse_stuck_in_topleft_corner_please_help/  
 - At least I can browse linux with a cursor motion I like... which is what I wanted mainly (I game on windows)... Getting games to take this new modified input properly is gonna be hard...  
+- Unplugging and replugging in mouse resets the settings
+- Accel speed also resets to the option used in linux settings
+  ![Screenshot from 2023-02-11 19-52-53](https://user-images.githubusercontent.com/108423881/218279032-43443366-ae0e-43dd-babc-c92ca9633c32.png)
+
 
 ## Features
 
