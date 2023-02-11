@@ -1,11 +1,25 @@
 # RawAccelForLinux
 
+## Features
+
+- Mouse sensor rotation (decimal in degrees)  
+- Mouse sensitivity multiplier (decimal)  
+
+### TODO SOON
+
+- Custom function accel curves  
+- GUI with speed graph thing, profiles, etc
+
+## Prequisites
+
+- python3
+  - e.g. ```sudo apt-get install python3```
 ## Usage
 
 ### Finding your mouseId
 
 - Open your terminal  
-- Type "Xinput list" and enter  
+- Type ```xinput list``` and enter  
 - You will find the id number next to mouse name (e.g. Finalmouse Starlight ... id=9)  
 ![image](https://user-images.githubusercontent.com/108423881/218272916-08bff256-bafb-4b68-aac0-b90dbe394bc9.png)  
 
@@ -18,7 +32,7 @@
 
 ### Apply config
 
-- Run "ApplyMouseConfig.py" (e.g. in terminal "~/etc/RawAccelForLinux$ python3 ApplyMouseConfig.py")  
+- Run "ApplyMouseConfig.py" (e.g. ```~/etc/RawAccelForLinux$ python3 ApplyMouseConfig.py```)  
 - Changes should be applied immediately but restarting the OS will reset the settings  
 - So I recommend running "ApplyMouseConfig.py" on startup  
   - e.g. with the startup manager:  
