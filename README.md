@@ -23,8 +23,8 @@
 - So I recommend running "ApplyMouseConfig.py" on startup  
 
 (  
-    e.g. with the startup manager:  
-  ![image](https://user-images.githubusercontent.com/108423881/218272855-b5bc1704-94ad-447c-9847-4b27b3af7818.png)  
+&nbsp;&nbsp;e.g. with the startup manager:  
+&nbsp;&nbsp;![image](https://user-images.githubusercontent.com/108423881/218272855-b5bc1704-94ad-447c-9847-4b27b3af7818.png)  
 )  
 
 
