@@ -1,0 +1,98 @@
+# vim: set expandtab shiftwidth=2 tabstop=8 textwidth=0 filetype=yaml:
+#
+# This CI uses the freedesktop.org ci-templates.
+# Please see the ci-templates documentation for details:
+# https://freedesktop.pages.freedesktop.org/ci-templates/
+
+.templates_sha: &template_sha c5626190ec14b475271288dda7a7dae8dbe0cd76 # see https://docs.gitlab.com/ee/ci/yaml/#includefile
+
+include:
+  - project: 'freedesktop/ci-templates'
+    ref: *template_sha
+    file: '/templates/fedora.yml'
+  - project: 'freedesktop/ci-templates'
+    ref: *template_sha
+    file: '/templates/ci-fairy.yml'
+  - template: Security/SAST.gitlab-ci.yml
+
+variables:
+  FDO_UPSTREAM_REPO: xorg/driver/xf86-input-libinput
+
+
+stages:
+  - containers
+  - build
+  - test
+
+.fedora:
+  variables:
+    FDO_DISTRIBUTION_VERSION: 33
+    FDO_DISTRIBUTION_PACKAGES: 'git autoconf automake libtool make xorg-x11-server-devel libudev-devel libevdev-devel libinput-devel xorg-x11-util-macros'
+    FDO_DISTRIBUTION_EXEC: 'env FDO_CI_CONCURRENT=${FDO_CI_CONCURRENT} bash .gitlab-ci/fedora-install.sh'
+    FDO_DISTRIBUTION_TAG: '2021-09-15.0'
+
+
+fedora@container_build:
+  extends:
+    - .fedora
+    - .fdo.container-build@fedora
+  stage: containers
+  variables:
+    GIT_STRATEGY: none
+
+
+.default_build:
+  stage: build
+  script:
+    - mkdir _builddir _inst
+    - pushd _builddir > /dev/null
+    - ../autogen.sh --prefix=$(realpath ../_inst) --disable-silent-rules
+    - make && make check
+    - make install
+    - popd > /dev/null
+  artifacts:
+    name: "automake-logs-$CI_JOB_NAME"
+    when: always
+    expire_in: 1 week
+    paths:
+      - _builddir/config.log
+
+
+fedora:33@default-build:
+  extends:
+    - .fedora
+    - .fdo.distribution-image@fedora
+    - .default_build
+
+#
+# Verify that commit messages are as expected
+#
+check-commits:
+  extends:
+    - .fdo.ci-fairy
+  stage: test
+  script:
+    - ci-fairy check-commits --junit-xml=results.xml
+  except:
+    - master@xorg/driver/xf86-input-libinput
+  variables:
+    GIT_DEPTH: 100
+  artifacts:
+    reports:
+      junit: results.xml
+  allow_failure: true
+
+#
+# Verify that the merge request has the allow-collaboration checkbox ticked
+#
+check-merge-request:
+  extends:
+    - .fdo.ci-fairy
+  stage: test
+  script:
+    - ci-fairy check-merge-request --require-allow-collaboration --junit-xml=results.xml
+  artifacts:
+    when: on_failure
+    reports:
+      junit: results.xml
+  allow_failure: true

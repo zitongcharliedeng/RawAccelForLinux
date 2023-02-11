@@ -1,0 +1,15 @@
+option('sdkdir',
+	type: 'string',
+	value: '',
+	description: 'Directory to install header files in [default=from xorg-server pkgconf]',
+)
+option('xorg-module-dir',
+	type : 'string',
+	value : '',
+	description : 'Default xorg module directory [default=from xorg-server pkgconf]',
+)
+option('xorg-conf-dir',
+	type : 'string',
+	value : '',
+	description : 'Default xorg.conf.d directory [default=from xorg-server pkgconfig]'
+)
