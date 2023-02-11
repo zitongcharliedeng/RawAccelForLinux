@@ -12,6 +12,7 @@
 
 ## Features
 
+- Works fine in cursor mode (in games are another story)
 - Mouse sensor rotation (decimal in degrees)  
 - Mouse sensitivity multiplier (decimal)  
 
