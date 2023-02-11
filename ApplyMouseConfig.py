@@ -5,11 +5,11 @@ import subprocess
 
 mouseId = 9
 
-sensitivityMultiplier = 0.075
+sensitivityMultiplier = 1
 
-degreesOfClockwiseSensorRotation = 11
+degreesOfClockwiseSensorRotation = 0
 
-accelSpeed = 0 # no idea how this works // default = 0
+accelSpeed = 0 # no idea how this works // default = 0 // after testing i think this is the mouse sensitivity in default linux options (the slider) it is nonlinear, and ranges -1 to 1
 
 accelSpeedDefault = 0 # no idea how this works // default = 0
 

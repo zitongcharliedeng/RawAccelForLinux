@@ -1,5 +1,11 @@
 # RawAccelForLinux
 
+## Problems
+
+- Only tested in Linux Minecraft so far...
+  - Getting problems like this https://www.reddit.com/r/linux_gaming/comments/3nxnzg/mouse_stuck_in_topleft_corner_please_help/  
+- At least I can browse linux with a cursor motion I like... which is what I wanted mainly (I game on windows)... Getting games to take this new modified input properly is gonna be hard...  
+
 ## Features
 
 - Mouse sensor rotation (decimal in degrees)  
