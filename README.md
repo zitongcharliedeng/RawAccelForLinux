@@ -1,5 +1,15 @@
 # RawAccelForLinux
 
+## Features
+
+- Mouse sensor rotation (decimal in degrees)  
+- Mouse sensitivity multiplier (decimal)  
+
+### TODO SOON
+
+- Custom function accel curves  
+- GUI with speed graph thing, profiles, etc
+
 ## Prequisites
 
 - python3
