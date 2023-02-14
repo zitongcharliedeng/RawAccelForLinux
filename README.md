@@ -45,9 +45,9 @@
 
 - Run "ApplyMouseConfig.py" (e.g. ```~/etc/RawAccelForLinux$ python3 ApplyMouseConfig.py```)  
 - Changes should be applied immediately but restarting the OS will reset the settings  
-- So I recommend running "ApplyMouseConfig.py" on startup  
+- So I recommend running "ApplyOnStartup.sh" on startup  
   - e.g. with the startup manager:  
-  ![image](https://user-images.githubusercontent.com/108423881/218272855-b5bc1704-94ad-447c-9847-4b27b3af7818.png)  
+ ![image](https://user-images.githubusercontent.com/108423881/218856959-abb16a1f-ff45-4c49-b2a4-7397b0bc903d.png)
 
 
 
