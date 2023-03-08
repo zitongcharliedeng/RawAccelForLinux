@@ -38,7 +38,8 @@
 
 ### Edit your config
 
-- Edit "ApplyMouseConfig.py" config to your liking using the mouseId you just found  
+- Edit "ApplyMouseConfig.py" config to your liking
+- For mouseId I recommend using your xinput mouse name (in quotations "") rather than integer id number since the id can change after replugging the mouse
   ![image](https://user-images.githubusercontent.com/108423881/218272945-7e72fa74-10cd-43bd-b0e9-e7c915cdcca0.png)  
 
 ### Apply config

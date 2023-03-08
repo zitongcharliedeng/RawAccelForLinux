@@ -3,11 +3,15 @@ import subprocess
 
 # Config
 
-mouseId = 9
+mouseId = "Finalmouse Finalmouse Wireless Receiver" # can either be = "NAME_OF_MOUSE_IN_XINPUT" (recommended since NUMBER_ID can change) or NUMBER_ID
 
 sensitivityMultiplier = 0.075
 
-degreesOfClockwiseSensorRotation = 11
+degreesOfClockwiseSensorRotation = 12
+
+
+
+
 
 accelSpeed = 0 # no idea how this works // default = 0 // after testing i think this is the mouse sensitivity in default linux options (the slider) it is nonlinear, and ranges -1 to 1
 
